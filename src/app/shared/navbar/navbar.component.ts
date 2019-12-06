@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { LandingComponent } from '../../examples/landing/landing.component';
 
 @Component({
     selector: 'app-navbar',
@@ -10,7 +11,7 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(public location: Location, private element: ElementRef, private elLanding: LandingComponent) {
         this.sidebarVisible = false;
     }
 
@@ -24,7 +25,7 @@ export class NavbarComponent implements OnInit {
         // console.log(html);
         // console.log(toggleButton, 'toggle');
 
-        setTimeout(function(){
+        setTimeout(function () {
             toggleButton.classList.add('toggled');
         }, 500);
         html.classList.add('nav-open');
@@ -48,27 +49,32 @@ export class NavbarComponent implements OnInit {
         }
     };
     isHome() {
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
-          titlee = titlee.slice( 1 );
-      }
-        if( titlee === '/home' ) {
-            return true;
+        let titlee = this.location.prepareExternalUrl(this.location.path());
+        if (titlee.charAt(0) === '#') {
+            titlee = titlee.slice(1);
         }
-        else {
+        if (titlee === '/home') {
+            return true;
+        } else {
             return false;
         }
     }
     isDocumentation() {
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      if(titlee.charAt(0) === '#'){
-          titlee = titlee.slice( 1 );
-      }
-        if( titlee === '/documentation' ) {
-            return true;
+        let titlee = this.location.prepareExternalUrl(this.location.path());
+        if (titlee.charAt(0) === '#') {
+            titlee = titlee.slice(1);
         }
-        else {
+
+        if (titlee === '/documentation') {
+            return true;
+        } else {
             return false;
         }
     }
+
+    toSection(section) {
+        this.elLanding.scrollTo(section);
+    }
+
+
 }

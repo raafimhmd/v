@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import { LandingComponent } from './examples/landing/landing.component';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { ExamplesModule } from './examples/examples.module';
     ExamplesModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    LandingComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

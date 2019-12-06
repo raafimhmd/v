@@ -9,20 +9,20 @@ import { SignupComponent } from './examples/signup/signup.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 
-const routes: Routes =[
+const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    // { path: 'home',             component: ComponentsComponent },
+    { path: 'doc',             component: ComponentsComponent },
     // { path: 'user-profile',     component: ProfileComponent },
     // { path: 'signup',           component: SignupComponent },
     { path: 'home',          component: LandingComponent },
-    // { path: 'nucleoicons',      component: NucleoiconsComponent }
+    { path: 'nucleoicons',      component: NucleoiconsComponent }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
+    RouterModule.forRoot(routes, {
       useHash: true
     })
   ],
