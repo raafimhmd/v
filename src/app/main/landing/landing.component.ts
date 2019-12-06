@@ -11,9 +11,47 @@ export class LandingComponent implements OnInit {
   focus: any;
   focus1: any;
 
+  myStyle: object = {};
+  myParams: object = {};
+  width = 100;
+  height = 100;
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.myStyle = {
+      'position': 'fixed',
+      'width': '100%',
+      'height': '100%',
+      'z-index': 10,
+      'top': 0,
+      'left': 0,
+      'right': 0,
+      'bottom': 0,
+    };
+    this.myParams = {
+      particles: {
+        number: {
+          value: 50,
+          // density: {
+          //   enable: true,
+          //   value_area: 3
+          // }
+        },
+        color: {
+          value: '#FFFFFF'
+        },
+        shape: {
+          type: 'circle',
+          // image: {
+          //   src: string;
+          //   width: number;
+          //   height: number;
+          // },
+        }
+      }
+    };
+  }
 
   scrollTo(section: string) {
     if (section === 'about') {

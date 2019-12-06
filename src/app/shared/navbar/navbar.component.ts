@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { LandingComponent } from '../../examples/landing/landing.component';
+import { LandingComponent } from '../../main/landing/landing.component';
 
 @Component({
     selector: 'app-navbar',

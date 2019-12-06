@@ -6,12 +6,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
+import { ParticlesModule } from 'angular-particle';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         NgbModule,
+        ParticlesModule
     ],
     declarations: [
         LandingComponent,
@@ -19,4 +21,4 @@ import { SignupComponent } from './signup/signup.component';
         ProfileComponent
     ]
 })
-export class ExamplesModule { }
+export class MainModule { }
